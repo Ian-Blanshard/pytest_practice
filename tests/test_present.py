@@ -15,3 +15,8 @@ def test_wrapping_already_wrapped():
         present.wrap(1)
     error_message = str(e.value)
     assert error_message == "A contents has already been wrapped."
+
+def test_can_unwrap_contents():
+    present = Present()
+    present.wrap(1)
+    assert present.unwrap() == 1
